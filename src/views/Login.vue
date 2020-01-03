@@ -1,7 +1,6 @@
 <template>
 
 
-
 <div class="container">
     <img src="@/assets/img/more_music.svg" class="wave">
     <div class="login-content">
@@ -33,10 +32,16 @@
             </div>
 
             <a href="#">*Esqueci a palavra passe</a>
-            <input type="submit" 
-			 class="btn" value="Login">
-			<i class="fas fa-spinner"></i>
 
+			<template v-if="loading">
+				Entrando...
+				<i class="fa fa-spinner fa-spin"></i>
+				</template>
+	
+			<template v-else>
+				  <button type="submit" 
+			 class="btn" value="Login">LOGIN <i class="fa fa-sign-in-alt"></i></button>
+			</template>
         </form>
     </div>
 </div>
@@ -48,6 +53,7 @@ export default {
 	name: 'Login',
 	data: () => {
 		return {
+			loading: false,
 			email: '',
 			password: ''
 		}
@@ -55,6 +61,7 @@ export default {
 
 methods: {
 async doLogin () {
+	this.loading = true
 	const { email, password  } = this
 	
 	try {
@@ -67,11 +74,11 @@ async doLogin () {
 	} catch (err) {
 		console.log(err)
 			}
+			this.loading = false
 		}
 	}
 }
 </script>
-
 
 
 <style>
@@ -87,25 +94,13 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-.container.wave{
-	position: fixed;
-	bottom: 10px;
-	left: 10px;
-	height: 83%;
-	z-index: -1;
-}
-
-.phone{
-	position: relative;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1;
+.wave {
+	height: 87vh;
 }
 
 .container{
     width: 90vw;
-    height: 100vh;
+    height: 75vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap :7rem;
@@ -125,13 +120,10 @@ body{
 	text-align: center;
 }
 
-.img img{
-	width: 500px;
-}
 
 form{
 	width: 360px;
-	margin-left: 50px;
+	margin-left: 25px;
 }
 
 .login-content img{
@@ -314,6 +306,10 @@ a:hover{
 		display: none;
 	}
 
+	.wave {
+		height: 77vh;
+	}
+
 }
 
 @media screen and (max-width: 850px){
@@ -342,11 +338,14 @@ a:hover{
 		z-index: -1;
 		margin-left: 10px;
 	}
+
+	form{
+	margin-left: 25px;
+}
 }
 
 p::first-letter {
 	color: #6c63ff;
 }
-
 
 </style>
