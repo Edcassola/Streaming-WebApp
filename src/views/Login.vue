@@ -1,6 +1,5 @@
 <template>
 
-
 <div class="container">
     <img src="@/assets/img/more_music.svg" class="wave">
     <div class="login-content">
@@ -34,8 +33,8 @@
             <a href="#">*Esqueci a palavra passe</a>
 
 			<template v-if="loading">
-				Entrando...
-				<i class="fa fa-spinner fa-spin"></i>
+				<button type="submit" 
+			 class="btn" value="Login">Entrando... <i class="fa fa-spinner fa-spin"></i></button>
 				</template>
 	
 			<template v-else>

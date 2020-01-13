@@ -1,11 +1,28 @@
 <template>
   <div id="app">
-    <div id="nav">
-
-    </div>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  name: 'App',
+  components: {
+
+  },
+  mounted() {
+    this.$firebase.auth().onAuthStateChanged(user => {
+      window.uid = user ? user.uid : null
+      if (window.uid) {
+        this.$router.push({ name: 'home'})
+      } else {
+        this.$router.push({ name: 'login'})
+      }
+    })
+  }
+}
+
+</script>
 
 <style>
 #app {

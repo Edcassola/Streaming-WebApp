@@ -14,18 +14,19 @@ const routes = [
     path: '/about',
     name: 'about',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import('../views/About.vue')
   },
   {
     path: '/login',
     name: 'login',
 
-    component: () => import(/* webpackChunkName: "about" */ '../views/Login.vue')
+    component: () => import( '../views/Login.vue')
   }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode:'history'
 })
 
 export default router
