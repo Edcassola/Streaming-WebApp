@@ -3,7 +3,13 @@
           <header><h1>Welcome to G A R G U S</h1></header>
           <main>
               <section class="player">
-                  <h2 class="song-title">{{ current.title }}</h2>
+                  <h2 class="song-title">{{ current.title }} - <span>{{ current.title }}</span></h2>
+                  <div class="contro">
+                      <button class="prev">A Seguir</button>
+                      <button class="play" v-if="!isPlaying">Play</button>
+                      <button class="pause" v-else>Pause</button>
+                      <button class="next">Next</button>
+                  </div>
               </section>
           </main>
       </div>
@@ -12,19 +18,24 @@
 <script>
 export default {
     name: 'app',
-    data (){
+    data () {
         return {
-            current: {
-                title: 'MUSIC TITLE'
-            },
+            current: {},
+            index: 0,
             songs: [
                 {
-                title: 'Stasera',
-                artists: 'Ultimo',
-                src: './assets/'
+                    title: 'Motherless',
+                    artist: 'J.Cole',
+                    src: require('../assets/img/projota.mp3')
                 }
-            ]
+            ],
+            player: new Audio()
         }
+    },
+
+    created () {
+        this.current = this.songs[this.index];
+        this.player.src = this.current.src;
     }
 }
 
@@ -47,5 +58,6 @@ header{
     align-items: center;
     padding: 15px;
     background-color: #212121;
+    color: #fff;
 }
 </style>
