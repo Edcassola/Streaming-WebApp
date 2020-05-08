@@ -1,6 +1,5 @@
 <template>
       <div id="app">
-          <header><h1>Welcome to G A R G U S</h1></header>
           <main>
               <section class="player">
                   <h2 class="song-title">{{ current.title }} - <span>{{ current.artist }}</span></h2>
@@ -86,22 +85,11 @@ export default {
 </script>
 
 <style scoped>
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body{
-    font-family: sens-serif;
-}
-
-header{
+#app{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 15px;
-    background-color: #6c63ff;
-    color: #fff;
 }
+
 </style>
