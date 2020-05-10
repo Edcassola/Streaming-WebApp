@@ -16,6 +16,8 @@ I'm still building the Gargus, down here there's a list of what's left to do
 
 # streaming-webapp
 
+##Here are some small steps to set up your development environment so that you can run this project
+
 ## Project setup
 ```
 npm install
