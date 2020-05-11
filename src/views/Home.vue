@@ -92,4 +92,27 @@ export default {
     align-items: center;
 }
 
+/* MEDIA QUERIES */
+
+/* DESKTOP */
+@media screen and (max-width: 1280) {
+    .container {
+        width: 960px;
+    }
+}
+/* TABLET */
+@media screen and (min-width: 810px) {
+.container{
+    width: 90%;
+    flex-wrap: wrap;
+    display: flex;
+}
+}
+/* PHONE */
+@media screen and (max-width: 516px){
+    .container {
+        width: 100%;
+    }
+    }
+
 </style>
