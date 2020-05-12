@@ -1,6 +1,7 @@
 <template>
       <div id="app">
           <main>
+              <img src="../assets/img/Ellipse.png" class="ellipse">
               <section class="player">
                   <h2 class="song-title">{{ current.title }} - <span>{{ current.artist }}</span></h2>
                   <div class="contro">
@@ -87,32 +88,29 @@ export default {
 <style scoped>
 
 #app{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(118, 111, 140, 0.442);
+    height: 100vh;
 }
 
 /* MEDIA QUERIES */
 
 /* DESKTOP */
-@media screen and (max-width: 1280) {
-    .container {
-        width: 960px;
+
+@media screen and (min-width: 900px) {
+    .ellipse {
+    padding-top: 6em;
+    width: auto;
+    height: 87vh;
     }
+
 }
-/* TABLET */
-@media screen and (min-width: 810px) {
-.container{
-    width: 90%;
-    flex-wrap: wrap;
-    display: flex;
-}
-}
+
 /* PHONE */
-@media screen and (max-width: 516px){
-    .container {
-        width: 100%;
+
+@media screen and (max-width: 899px){
+.ellipse {
+    display: none;
     }
-    }
+}
 
 </style>
