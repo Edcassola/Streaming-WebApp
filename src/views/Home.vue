@@ -1,6 +1,18 @@
 <template>
       <div id="app">
           <main>
+              <div class="top-icons">
+                  <section class="logo">
+                      <a href="#">
+                      <img class="logo" src="../assets/img/gargus.png"></a>
+                  </section>
+                  <section class="side-top-icons">
+                  <img class="side" src="../assets/img/cars.png">
+                  <img class="side" src="../assets/img/search.png">
+                  <img class="side" src="../assets/img/bars.png">
+                  </section>
+              </div>
+              <img src="../assets/img/Ellipse1.png" class="linha">
               <img src="../assets/img/Ellipse.png" class="ellipse">
               <section class="player">
                   <h2 class="song-title">{{ current.title }} - <span>{{ current.artist }}</span></h2>
@@ -89,19 +101,44 @@ export default {
 
 #app{
     background-color: rgba(118, 111, 140, 0.442);
-    height: 100vh;
 }
 
-/* MEDIA QUERIES */
+
+.top-icons {
+    display: flex;
+    justify-content: space-between;
+}
+.logo {
+    width: 17em;
+    padding: 2.6em;
+}
+
+.side{
+    margin: 7em 40px;
+    padding: 3px 50px 0 0;
+    width: 3em;
+}
+.side-top-icons {
+    padding: 1em;
+}
+    .linha {
+        position: fixed;
+    z-index: 0;
+    width: auto;
+    height: 67vh;
+    z-index: 12;
+    }
 
 /* DESKTOP */
-
 @media screen and (min-width: 900px) {
     .ellipse {
-    padding-top: 6em;
+    background-size: cover;
+    padding-top: 0;
     width: auto;
     height: 87vh;
+    z-index: 12;
     }
+
 
 }
 
