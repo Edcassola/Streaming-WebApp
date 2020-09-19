@@ -13,11 +13,10 @@ export default {
   mounted() {
     this.$firebase.auth().onAuthStateChanged(user => {
       window.uid = user ? user.uid : null
-      if (window.uid) {
         this.$router.push({ name: 'home'})
-      } else {
-        this.$router.push({ name: 'login'})
-      }
+      // } else {
+      //   this.$router.push({ name: 'login'})
+      // }
     })
   }
 }

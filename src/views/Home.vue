@@ -12,8 +12,12 @@
                   <img class="side" src="../assets/img/bars.png">
                   </section>
               </div>
-              <img src="../assets/img/Ellipse1.png" class="linha">
-              <img src="../assets/img/Ellipse.png" class="ellipse">
+              <div class="center-content">
+                  <section class="side-bar"></section>
+                  <section class="purple-circle"></section>
+              </div>
+              <!-- <img src="../assets/img/Ellipse1.png" class="linha"> -->
+              <!-- <img src="../assets/img/Ellipse.png" class="ellipse"> -->
               <section class="player">
                   <h2 class="song-title">{{ current.title }} - <span>{{ current.artist }}</span></h2>
                   <div class="contro">
@@ -99,38 +103,42 @@ export default {
 
 <style scoped>
 
+
+
 #app{
     background-color: rgba(118, 111, 140, 0.442);
 }
-
 
 .top-icons {
     display: flex;
     justify-content: space-between;
 }
+
 .logo {
-    width: 17em;
-    padding: 2.6em;
+    width: 7em;
+    padding: 2.2em;
 }
 
 .side{
-    margin: 7em 40px;
-    padding: 3px 50px 0 0;
-    width: 3em;
+    margin: 5em 12px;
+    padding: 0 12px;
+    width: 1.2em;
 }
+
 .side-top-icons {
     padding: 1em;
 }
-    .linha {
-        position: fixed;
+
+/* .linha {
+    position: fixed;
     z-index: 0;
     width: auto;
     height: 67vh;
     z-index: 12;
-    }
+} */
 
 /* DESKTOP */
-@media screen and (min-width: 900px) {
+/* @media screen and (min-width: 900px) {
     .ellipse {
     background-size: cover;
     padding-top: 0;
@@ -140,7 +148,7 @@ export default {
     }
 
 
-}
+} */
 
 /* PHONE */
 
