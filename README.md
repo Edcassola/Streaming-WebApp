@@ -1,6 +1,10 @@
 # GARGUS
 ###### A web application made with Vue.js & Firebase
 
+Gargus is a 'Streaming of music' Web App that finds the
+your favorite songs, create a playlist and organize them
+Chronological form.
+
 ![Gargus main Layout](https://user-images.githubusercontent.com/43777143/81461746-6fcfbe00-919d-11ea-9c99-6f473bfe086b.png)
 
 I'm still building the Gargus, down here there's a list of what's left to do
